@@ -60,14 +60,14 @@ public class FitnessCalculation implements Runnable {
 				courseCounter = 0;
 				for (int LecturerIndex = 0; LecturerIndex < Individual.NumOfLecturers; LecturerIndex++) {
 					for (int ClassIndex = 0; ClassIndex < Individual.NumOfClasses; ClassIndex++) {
-						
+						System.out.println(individual.getGeneByIndex(Hours,LecturerIndex, ClassIndex, courseIndex).getIndex());
+						System.out.println(individual.getGeneByIndex(Hours, LecturerIndex,ClassIndex, courseIndex).isGene());
 						if ((individual.getGeneByIndex(Hours, LecturerIndex,ClassIndex, courseIndex).isGene())&& (individual.getGeneByIndex(Hours,LecturerIndex, ClassIndex, courseIndex).getIndex() == 0)) 
-						{
+						{  //the big question is why 
 							// check how many times a course has been assigned
 							// in an hour
 							//System.out.println("with course counter");
 							courseCounter++;
-							System.out.println("value of course counter is::"+courseCounter);
 							//System.out.println(map1.initcourse().get(courseID));
 							if (map1.initcourse().get(courseID).getCourseid() == courseID) {
 								// check all course are assigned

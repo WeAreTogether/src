@@ -31,6 +31,7 @@ public class Individual {
 	
 	Database DB_obj=new Database();
 
+	Gene jpgene;
 	/*
 	public Individual() {
 		Gene[][][][] genes = new Gene[weeklyHours][NumOfLecturers][NumOfClasses][NumOfCourses];
@@ -83,23 +84,37 @@ public class Individual {
 					// NumOfClasses
 					for (int C = 0; C < NumOfCourses; C++)
 					{ // NumOfCourses
-		
+		                  /*
+		                   * 
+		                   * I am making changes Here
+		                   * */
+						jpgene=new Gene();
+						jpgene.setIndex(indv.getGeneByIndex(H, L, R, C).getIndex());
+						
+						
+						//ends here
 							genes[H][L][R][C] = new Gene();
 							genes[H][L][R][C].setIndex(indv.getGeneByIndex(H, L, R, C).getIndex());
 
 							if (indv.getGeneByIndex(H, L, R, C).isEditable())
-								genes[H][L][R][C].setEditable();
+								{ genes[H][L][R][C].setEditable(); 
+								 jpgene.setEditable();
+								}
 							else
 							{
 								genes[H][L][R][C].setUnEditable();
+								jpgene.setUnEditable();
 							}
 							if (indv.getGeneByIndex(H, L, R, C).isGene())
-								genes[H][L][R][C].setGene(indv.getGeneByIndex(H, L, R, C).getIndex());
+								{genes[H][L][R][C].setGene(indv.getGeneByIndex(H, L, R, C).getIndex());
+								jpgene.setGene(indv.getGeneByIndex(H, L, R, C).getIndex());
+								}
 							else
 							{
 								genes[H][L][R][C].clrGene();
+								jpgene.clrGene();
 							}
-					}
+					}//number of 
 		
 		setPrinted(indv.isPrinted());
 	}
@@ -164,6 +179,7 @@ public class Individual {
 									for (i = 0; i < hoursForCourse; i++)
 									{
 										genes[H + i][L][R][C].setGene(i);
+										this.genes[H + i][L][R][C]=
 										//System.out.println("Editable Hours::"+genes[H + i][L][R][C]);
 										geneSet = true;
 									}
