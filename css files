@@ -1,0 +1,42 @@
+//shop-item.css
+body {
+  padding-top: 70px
+}
+
+.thumbnail img {
+  width: 100%;
+}
+
+.ratings {
+  color: #d17581;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.thumbnail {
+  padding: 0;
+}
+
+.thumbnail .caption-full {
+  padding: 9px;
+  color: #333;
+}
+
+footer {
+  margin: 50px 0;
+}
+
+//the-big picture
+body {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: none;
+}
+
+.full {
+  background: url(http://placehold.it/1920x1080) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
